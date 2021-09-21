@@ -35,8 +35,8 @@ def logs(packet):
 if protocol == "all":
 	sniff(iface=net_iface, count=num_of_pkt,timeout=time_sec, prn=logs)  # sniffing packet
 elif protocol == "arp":
-	sniff(iface=net_iface, count=num_of_pkt,timeout=time_sec, prn=logs)  # sniffing packet
+	sniff(iface=net_iface, count=num_of_pkt,timeout=time_sec, prn=logs, filter = protocol)  # sniffing packet
 elif protocol == "icmp":
-	sniff(iface=net_iface, count=num_of_pkt,timeout=time_sec, prn=logs)  # sniffing packet
+	sniff(iface=net_iface, count=num_of_pkt,timeout=time_sec, prn=logs, filter = protocol)  # sniffing packet
 else:
 	print("Wrong protocol")
